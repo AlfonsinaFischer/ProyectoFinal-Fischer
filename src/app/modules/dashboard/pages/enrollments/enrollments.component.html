@@ -1,0 +1,44 @@
+<mat-spinner *ngIf="isLoading$ | async; else notLoadingTemplate"></mat-spinner>
+<ng-container *ngIf="error$ | async; else successTemplate">
+  <mat-card class="error-card">
+    <mat-icon color="warn">error</mat-icon>
+    <p>Error loading enrollments</p>
+  </mat-card>
+</ng-container>
+<ng-template #notLoadingTemplate>
+  <mat-card class="enrollment-form">
+    <mat-card-title>Inscripción de Estudiantes</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="enrollmentForm" (ngSubmit)="onSubmit()" class="w-full">
+        <mat-form-field class="w-full">
+          <mat-label>Estudiante</mat-label>
+          <mat-select formControlName="studentId">
+            <mat-option *ngFor="let student of students" [value]="student.id">
+              {{ student.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="w-full">
+          <mat-label>Curso</mat-label>
+          <mat-select formControlName="courseId">
+            <mat-option *ngFor="let course of courses" [value]="course.id">
+              {{ course.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Inscribir</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="enrollments-list">
+    <mat-card-title>Lista de Inscripciones</mat-card-title>
+    <mat-card-content>
+      <table mat-table [dataSource]="enrollments$ | async" class="mat-elevation-z8">
+        <!-- Table columns and rows -->
+      </table>
+    </mat-card-content>
+  </mat-card>
+</ng-template>
+<ng-template #successTemplate>
+  <p>Enrollments loaded successfully</p>
+</ng-template>

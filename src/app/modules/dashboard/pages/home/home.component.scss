@@ -1,0 +1,83 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .hero-background {
+    position: relative;
+    width: 100%;
+    height: 60%;
+    background-image: url('https://path/to/your/xmen-style-background.jpg'); 
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  .welcome-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .main-title {
+    font-size: 4rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    margin-bottom: 10px;
+  }
+  
+  .subtitle {
+    font-size: 2rem;
+    font-weight: 300;
+    color: #ddd;
+  }
+  
+  .content {
+    padding: 20px;
+    color: #333;
+    background-color: #fff;
+    width: 100%;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  
+  .intro-text {
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-bottom: 30px;
+    color: #555;
+  }
+  
+  .cta-container {
+    margin-top: 20px;
+  }
+  
+  .cta-button {
+    font-size: 1.2rem;
+    padding: 12px 30px;
+    background-color: #f44336; /* Rojo épico */
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: #d32f2f;
+    }
+  }

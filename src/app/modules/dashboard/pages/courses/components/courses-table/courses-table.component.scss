@@ -1,0 +1,56 @@
+:host {
+    display: block;
+    margin: 16px;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  th,
+  td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  
+  tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  button {
+    margin-left: 8px;
+  }
+  
+  .mat-column-actions {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .mat-icon {
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  .mat-icon:hover {
+    color: #007bff;
+  }
+  
+  .spinner-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .error-message {
+    color: red;
+    text-align: center;
+    margin-top: 16px;
+  }

@@ -1,0 +1,17 @@
+<mat-nav-list>
+
+  <ng-container *ngFor="let item of linkItems; trackBy: trackByFn">
+    <a
+      mat-list-item
+      [routerLink]="item.routerLink"
+      routerLinkActive="active-link"
+    >
+      {{ item.label }}
+    </a>
+  </ng-container>
+
+
+  <a mat-list-item (click)="logout()" class="logout">
+    Cerrar sesión
+  </a>
+</mat-nav-list>

@@ -1,0 +1,24 @@
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { StudentsService } from '../../../../core/services/students.service';
+import { Student } from './models';
+import { Subscription } from 'rxjs';
+
+@Component({
+  selector: 'app-students',
+  templateUrl: './students.component.html',
+  styleUrls: ['./students.component.scss'], // Corregido aquí
+})
+export class StudentsComponent implements OnInit, OnDestroy {
+  displayedColumns: string[] = ['id', 'name'];
+  students: Student[] = [];
+  isLoading = false;
+  hasError = false;
+  studentsSubscription?: Subscription;
+
+  constructor(private studentsService: StudentsService) {}
+
+  ngOnDestroy(): void {
+      if (this.studentsSubscription) {
+        this.studentsSubscription.unsubscribe();
+      }
+    }

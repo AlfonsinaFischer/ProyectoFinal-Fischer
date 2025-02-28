@@ -1,0 +1,83 @@
+{
+  "users": [
+    {
+      "id": "vnD3s",
+      "email": "admin@email.com",
+      "password": "123456",
+      "name": "Administrador",
+      "accessToken": "djMDFJNdfmvcJKDFdsmd23GFuedsvFGD2d32",
+      "role": "ADMIN"
+    },
+    {
+      "id": "avs3D",
+      "email": "employee@email.com",
+      "password": "123456",
+      "name": "Empleado",
+      "accessToken": "djMDFJNd3gngh61DFd56hhgfddd23GFue232",
+      "role": "EMPLOYEE"
+    },
+    {
+      "id": "fdvc",
+      "email": "student2@email.com",
+      "password": "123456",
+      "name": "Naruto",
+      "accessToken": "asdvfdsjgkfdkgjfdasdfDFDSBVDFSDF",
+      "role": "STUDENT"
+    },
+    {
+      "id": "fdvv3c",
+      "email": "student4@email.com",
+      "password": "123456",
+      "name": "Estudiante",
+      "accessToken": "dssdxcvdfgdsg45EDFDSfgERWCXGSFDGFDSGf",
+      "role": "STUDENT"
+    }
+  ],
+  "courses": [
+    {
+      "id": "svDFs3",
+      "name": "Javascript EDITADO"
+    },
+    {
+      "name": "Blender 3D",
+      "id": "svDFj3"
+    },
+    {
+      "id": "a9c9",
+      "name": "Unity"
+    },
+    {
+      "id": "d71d",
+      "name": "CorelDraw"
+    }
+  ],
+  "teachers": [
+    {
+      "id": "sdjv4",
+      "name": "Kakashi Sensei",
+      "courseId": "a9c9"
+    }
+  ],
+  "enrollments": [
+    {
+      "id": "adc33D",
+      "studentId": "fdvc",
+      "courseId": "svDFj3"
+    },
+    {
+      "id": "c801",
+      "studentId": "fdvc",
+      "courseId": "svDFs3"
+    },
+    {
+      "id": "86fa",
+      "studentId": "fdvv3c",
+      "courseId": "svDFj3"
+    },
+    {
+      "id": "e218",
+      "studentId": "fdvc",
+      "courseId": "svDFs3"
+    }
+  ]
+}

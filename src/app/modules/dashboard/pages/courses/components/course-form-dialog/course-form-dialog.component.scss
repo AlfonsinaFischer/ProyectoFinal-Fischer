@@ -1,0 +1,36 @@
+:host {
+    display: block;
+    padding: 1.5rem;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  mat-dialog-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  mat-form-field {
+    width: 100%;
+  }
+  
+  .mat-mdc-form-field {
+    &.ng-invalid.ng-touched {
+      .mdc-text-field {
+        border-color: red;
+      }
+    }
+  }
+  
+  .dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding-top: 1rem;
+  
+    button {
+      min-width: 100px;
+    }
+  }
+  

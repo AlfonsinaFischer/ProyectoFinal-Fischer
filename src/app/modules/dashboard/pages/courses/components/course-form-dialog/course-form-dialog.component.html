@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>{{ data?.editingCourse ? 'Editar curso' : 'Crear curso' }}</h1>
+
+<div mat-dialog-content>
+  <form [formGroup]="courseForm">
+    <mat-form-field class="w-full" appearance="outline">
+      <mat-label>Nombre del curso</mat-label>
+      <input formControlName="name" matInput required />
+      <mat-error *ngIf="courseForm.controls['name'].hasError('required')">
+        El nombre es obligatorio
+      </mat-error>
+    </mat-form-field>
+  </form>
+</div>
+
+<div mat-dialog-actions align="end">
+  <button mat-dialog-close mat-button color="warn">Cancelar</button>
+  <button 
+    (click)="onConfirm()" 
+    mat-raised-button 
+    color="primary"
+    [disabled]="courseForm.invalid"
+  >
+    Confirmar
+  </button>
+</div>
+
+

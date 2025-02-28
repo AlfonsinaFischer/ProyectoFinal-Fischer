@@ -1,0 +1,16 @@
+<mat-toolbar class="toolbar">
+  <div class="left-section">
+    <button
+      (click)="drawerToggle.emit()"
+      mat-icon-button
+      aria-label="Abrir menú lateral"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="toolbar-title">My App</span>
+  </div>
+
+  <div class="right-section">
+    <span class="auth-email">{{ authUserEmail$ | async }}</span>
+  </div>
+</mat-toolbar>

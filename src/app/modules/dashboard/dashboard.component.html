@@ -1,0 +1,19 @@
+
+<!-- CONTENEDOR -->
+<mat-drawer-container class="custom-container" autosize>
+  <!-- MENU LATERAL -->
+  <mat-drawer [opened]="true" #drawer class="custom-sidenav" mode="side">
+    <app-nav-menu></app-nav-menu>
+  </mat-drawer>
+  <!-- MENU LATERAL FIN -->
+
+  <!-- AREA CONTENIDO -->
+  <div class="custom-sidenav-content">
+    <app-toolbar (drawerToggle)="drawer.toggle()" />
+    <main class="content-area" style="padding: 1rem">
+      <!-- Aquí puedes poner el componente de estudiantes o cualquier otro que necesites -->
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+  <!-- AREA CONTENIDO FIN -->
+</mat-drawer-container>

@@ -1,0 +1,66 @@
+@use '@angular/material' as mat;
+
+// Definición de la paleta de colores inspirada en la Institución Xavier
+$primary-color: #0C2340; // Azul oscuro
+$secondary-color: #FFCC00; // Amarillo vibrante
+$accent-color: #D32F2F; // Rojo intenso para detalles
+
+// Crear una paleta de Angular Material basada en estos colores
+$custom-theme: mat.define-light-theme((
+  color: (
+    primary: mat.define-palette(mat.$blue-palette, 900),
+    accent: mat.define-palette(mat.$yellow-palette, 700),
+    warn: mat.define-palette(mat.$red-palette),
+  ),
+  typography: mat.define-typography-config(
+    $font-family: 'Poppins, Roboto, "Helvetica Neue", sans-serif',
+  ),
+  density: 0,
+));
+
+@include mat.all-component-themes($custom-theme);
+
+/* Global Styles */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Poppins', Roboto, 'Helvetica Neue', sans-serif;
+  background-color: color.adjust($primary-color, $lightness: 5%);
+  color: white;
+}
+
+/* Mejoras visuales generales */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  color: $secondary-color;
+}
+
+button {
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 8px;
+}
+
+.mat-toolbar {
+  background-color: $primary-color !important;
+  color: $secondary-color !important;
+}
+
+.mat-sidenav {
+  background-color: color.adjust($primary-color, $lightness: -5%);
+  color: white;
+}
+
+.mat-card {
+  background: color.adjust($primary-color, $lightness: 10%);
+  color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+

@@ -1,0 +1,24 @@
+<h2>Cursos</h2>
+
+
+<mat-spinner *ngIf="isLoading" class="loading-spinner"></mat-spinner>
+
+
+<div *ngIf="!isLoading">
+
+  <button
+    [disabled]="!(isAdmin$ | async)"
+    (click)="openFormDialog()"
+    mat-flat-button
+    class="create-course-btn"
+  >
+    Crear curso
+  </button>
+
+
+  <app-courses-table
+    [dataSource]="dataSource"
+    (delete)="onDelete($event)"
+    (edit)="openFormDialog($event)"
+  ></app-courses-table>
+</div>

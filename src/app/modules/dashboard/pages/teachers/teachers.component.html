@@ -1,0 +1,14 @@
+<div class="teachers-container">
+    <h1>Profesores de la Mansión Xavier</h1>
+    
+    <div class="teachers-list">
+      <div class="teacher-card" *ngFor="let teacher of teachers">
+        <img [src]="teacher.image" alt="{{ teacher.name }}" class="teacher-img">
+        <div class="teacher-info">
+          <h2>{{ teacher.name }}</h2>
+          <p><strong>Habilidad:</strong> {{ teacher.power }}</p>
+          <p><strong>Email:</strong> {{ teacher.email }}</p>
+        </div>
+      </div>
+    </div>
+  </div>

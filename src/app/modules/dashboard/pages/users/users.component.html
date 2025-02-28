@@ -1,0 +1,8 @@
+<mat-list>
+  <mat-list-item *ngFor="let user of users$ | async">
+    <span>{{ user.name }}</span>
+    <button mat-icon-button (click)="deleteUserById(user.id)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-list-item>
+</mat-list>
