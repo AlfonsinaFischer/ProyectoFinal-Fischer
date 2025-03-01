@@ -1,59 +1,78 @@
-# PfBaez62840
+Información de Usuarios
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.4.
+A continuación, se detallan los usuarios predefinidos en el sistema, junto con sus credenciales de acceso y roles correspondientes:
 
-## Development server
+Usuarios Predefinidos
 
-To start a local development server, run:
+[
+  {
+    "id": "1",
+    "name": "CharlesXavier",
+    "email": "charlesxavier@email.com",
+    "password": "12378",
+    "role": "ADMIN",
+    "accessToken": "token_admin_123"
+  },
+  {
+    "id": "2",
+    "name": "ScottSummers",
+    "email": "ScottSummers@email.com",
+    "password": "profesor123",
+    "role": "TEACHER",
+    "accessToken": "token_teacher_456"
+  }
+]
 
-```bash
-ng serve
-```
+Roles de Usuarios
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+ADMIN: Tiene acceso completo a la administración del sistema, incluyendo la gestión de usuarios, cursos y estudiantes.
 
-## Code scaffolding
+TEACHER: Puede gestionar cursos y estudiantes asociados a sus clases.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Información de Estudiantes
 
-```bash
-ng generate component component-name
-```
+El sistema también almacena información sobre los estudiantes inscritos en los cursos. Los datos incluyen:
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+ID del estudiante
 
-```bash
-ng generate --help
-```
+Nombre completo
 
-## Building
+Email de contacto
 
-To build the project run:
+Cursos en los que está inscrito
 
-```bash
-ng build
-```
+La información de los estudiantes se almacena en una estructura similar a la siguiente:
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+[
+  {
+    "id": "101",
+    "name": "JeanGrey",
+    "email": "jeangrey@email.com",
+    "courses": ["Matemáticas", "Física"]
+  },
+  {
+    "id": "102",
+    "name": "OroroMunroe",
+    "email": "ororomunroe@email.com",
+    "courses": ["Química", "Biología"]
+  }
+]
 
-## Running unit tests
+Uso del Sistema
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Iniciar sesión con un usuario válido utilizando el email y la contraseña proporcionados.
 
-```bash
-ng test
-```
+Dependiendo del rol, se mostrarán diferentes opciones en el menú lateral.
 
-## Running end-to-end tests
+Los administradores pueden gestionar usuarios, cursos y alumnos.
 
-For end-to-end (e2e) testing, run:
+Los profesores pueden administrar sus cursos y estudiantes asignados.
 
-```bash
-ng e2e
-```
+Notas Importantes
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+La autenticación se maneja a través de accessToken asignados a cada usuario.
 
-## Additional Resources
+La información de usuarios y estudiantes se puede modificar en la base de datos o archivos de configuración según sea necesario.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Asegurar que los datos sean tratados de manera segura en un entorno de producción.
+
