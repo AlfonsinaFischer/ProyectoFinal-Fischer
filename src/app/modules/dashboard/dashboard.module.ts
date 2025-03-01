@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
 
-import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
+import { DashboardRoutingModule } from './dashboard-routing.module';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -17,25 +18,29 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatTableModule } from '@angular/material/table';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatOptionModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
+
+const routes: Routes = [
+  { path: '', component: DashboardComponent }
+];
 
 @NgModule({
-  declarations: [DashboardComponent, NavMenuComponent, ToolbarComponent], 
+  declarations: [DashboardComponent], 
   imports: [
     CommonModule,
-    DashboardRoutingModule,
-    MatSidenavModule,
-    MatButtonModule,
+    RouterModule.forChild(routes),
     MatToolbarModule,
-    MatIconModule,
-    StudentsModule,
-    SharedModule, 
+    MatSidenavModule,
     MatCardModule,
+    MatIconModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatTableModule,
-    MatProgressSpinnerModule,
-    EnrollmentsComponent
+    MatOptionModule,
+    MatButtonModule,
+    MatInputModule
   ],
+  providers: [],
   exports: [DashboardComponent],
 })
 export class DashboardModule {}

@@ -1,14 +1,11 @@
 import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { DashboardModule } from './modules/dashboard/dashboard.module';
 import { StoreModule } from '@ngrx/store';
-import { rootReducer } from './store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
-import { provideHttpClient, withFetch } from '@angular/common/http';
-import { authGuard } from './core/guards/auth.guard';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -20,15 +17,17 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
-import { DashboardComponent } from './modules/dashboard/dashboard.component';
-import { NgModule, isDevMode } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { provideAnimationsAsync } from '@angular/animations'; 
+import { provideHttpClient, withFetch } from '@angular/common/http';
+import { rootReducer } from './store';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppComponent } from './app.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [DashboardComponent, AppComponent],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     DashboardModule,
     StoreModule.forRoot(rootReducer, {}),
@@ -46,7 +45,6 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     MatButtonModule,
     MatInputModule
   ],
-  providers: [provideAnimationsAsync(), provideHttpClient(withFetch()), authGuard],
-  bootstrap: [AppComponent]
+  providers: [provideAnimationsAsync(), provideHttpClient(withFetch())],
 })
-export class AppModule {}
+export class AppModule { }
